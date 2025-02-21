@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Webscraping Exam</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>M2 IREF : Examen de Webscraping 2025</h1>
+  
+<p>
+  Bonjour à toutes et à tous, voici la page web de l'examen de webscraping, je vous prie 
+  de lire attentivement les consignes qui suivent.
+</p>
+
+<h4>Consignes :</h4>
+<ul>
+  <li>il y a trois exercices</li>
+  <li>chaque exercice vaut 7 points</li>
+  <li>vous ne pouvez commencer un exercice que quand vous avez terminé le précédent</li>
+  <li>à la fin de chaque exercice, vous devez valider votre réponse grâce à une clé : regardez la section "générer la clé"</li>
+  <li>pour accéder à l'exercice suivant, vous devez tester si la clé que vous avez obtenue est la bonne</li>
+  <li>si la clé est la bonne : 1) vous obtenez 7 points, et 2) vous accédez à l'exercice qui suit</li>
+  <li>vous avez deux heures</li>
+  <li>à la fin, charger votre fichier source python sur la plateforme moodle du 
+    cours : <a href="https://moodle.u-bordeaux.fr/mod/assign/view.php?id=563799">Moodle Webscraping</a>. Sans ce fichier, vous aurez 0. </li>
+</ul>
+
+<div class="generation_cle">
+  <h4>Générer la clé</h4>
+  <p>
+    Dans chaque exercice, vous devez trouver un vecteur de chaine de caractères. 
+    Une fois que vous l'avez trouvé, vous devez le hasher avec la fonction suivante :
+    <pre><code>
+import hashlib
+def gen_key(vec):
+  s = ", ".join(vec).encode("utf-8")
+  res = sha256(s)
+  return res.hexdigest()[:8]
+    </code></pre>
+  </p>
+</div>
+
+<p class="depart">Quand vous êtes prêts, vous pouvez <button id="btn_start">commencer</button></p>
+
+<div class="exercice" id="page_exo1">
+  
+  <h3>Exercice 1</h3>
+
+  <p>L'objectif est d'obtenir l'ensemble des noms des parlementaires français.</p>
+
+  <p>
+    Le site suivant liste l'ensemble des députés : 
+    <br> <a href="https://www2.assemblee-nationale.fr/deputes/liste/photo">https://www2.assemblee-nationale.fr/deputes/liste/photo</a>
+    <br>
+    Récoltez l'ensemble des noms (576 noms), vous devez obtenir une liste qui commence par les éléments suivants:
+    <br> <pre><code>['Mme Abomangoli', 'M. Albertini', 'M. Alexandre', etc</code></pre>
+    <br>
+  </p>
+
+  <div class="serrure">
+    <p>
+      Une fois le vecteur obtenu, créez une clé avec la fonction <code>gen_key(vecteur)</code>, au dessus.
+    </p>
+    <input type="text" id="exo1" name="Exo 1" required minlength="4" maxlength="8" size="10" />
+    <button id="btn_exo1">Testez</button>
+  </div>
+  
+</div>
+
+
+<div class="exercice" id="page_exo2">
+  
+  <h3>Exercice 2</h3>
+
+  <p>Cet exercice est toujours dans le contexte des parlementaires français. Cette fois l'objectif 
+    sera d'obtenir toutes les adresses emails des parlementaires.</p>
+
+  <p>
+    Vous partirez de la même page que précédemment afin de trouver les pages individuelles où se trouvera l'information : 
+    <br> <a href="https://www2.assemblee-nationale.fr/deputes/liste/photo">https://www2.assemblee-nationale.fr/deputes/liste/photo</a>
+    <br>
+    Pour des raisons de temps, <strong>récoltez uniquement les 20 premières adresses email</strong>. 
+    Vous devez obtenir une liste comme celle-ci :
+    <br> <pre><code>['nadege.abomangoli@assemblee-nationale.fr', 'xavier.albertini@assemblee-nationale.fr', 'laurent.alexandre@assemblee-nationale.fr', etc</code></pre>
+    <br>
+  </p>
+
+  <div class="serrure">
+    <p>
+      Une fois le vecteur obtenu, créez une clé avec la fonction <code>gen_key(vecteur)</code>, au dessus.
+    </p>
+    <input type="text" id="exo2" name="Exo 2" required minlength="4" maxlength="8" size="10" />
+    <button id="btn_exo2">Testez</button>
+  </div>
+  
+</div>
+
+<div class="exercice" id="page_exo3">
+  
+  <h3>Exercice 3</h3>
+
+  <p>
+    Cette fois nous sommes dans le contexte du football. Nous souhaitons connaitre les noms 
+    de l'ensemble des joueurs de Ligue 1. 
+  </p>
+
+  <p>
+    Le site "madeinfoot" liste tous les joueurs français. Collectez les noms de footballer à partir de la page suivante :
+    <br> <a href="https://madeinfoot.ouest-france.fr/ligue-1/l1-liste-A.html">https://madeinfoot.ouest-france.fr/ligue-1/l1-liste-A.html</a>
+    <br>
+    Par souci de temps, <strong>ne collectez que les footballers dont les noms commencent par A à ceux qui commencent par G.</strong>
+    
+    Vous êtes censés retrouver 209 joueurs, dont la liste de nom commence ainsi :
+    <br> <pre><code>['Abdalla Mostafa Mohamed Ahmed', 'Abdelhamid Yunis', 'Abdelli Himad Said', etc</code></pre>
+    <br>
+  </p>
+
+  <div class="serrure">
+    <p>
+      Une fois le vecteur obtenu, créez une clé avec la fonction <code>gen_key(vecteur)</code>, au dessus.
+    </p>
+    <input type="text" id="exo3" name="Exo 3" required minlength="4" maxlength="8" size="10" />
+    <button id="btn_exo3">Testez</button>
+  </div>
+  
+</div>
+
+<div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
+
+<footer>
+  <p> <span class="cursif">Created by</span> <a class="lrberge" href="https://sites.google.com/site/laurentrberge/home">Laurent R. Berg&eacute;</a> </p>
+</footer> 
+
+<script>
+let all_ex = document.getElementsByClassName("exercice");
+for(el of all_ex){
+  el.style.display = 'none';
+}
+
+function fun_start(event){
+  document.querySelector("p.depart").style.display = "none";
+  all_ex[0].style.display = 'block';
+}
+
+let btn_start = document.getElementById("btn_start");
+btn_start.addEventListener("click", fun_start)
+
+function fun_exo1(event){
+  let cle = document.getElementById("exo1");
+  if(cle.value == "6e066ae7"){
+    let serr = document.querySelectorAll("#page_exo1 div.serrure")[0];
+    serr.innerHTML = "Bravo, vous obtenez 7 points et passez à l'exercice suivant !"
+    all_ex[1].style.display = 'block';
+  }
+}
+
+let btn_exo1 = document.getElementById("btn_exo1");
+btn_exo1.addEventListener("click", fun_exo1)
+
+
+function fun_exo2(event){
+  let cle = document.getElementById("exo2");
+  if(cle.value == "1fdfdfe3"){
+    let serr = document.querySelectorAll("#page_exo2 div.serrure")[0];
+    serr.innerHTML = "Bravo, vous obtenez 7 points et passez à l'exercice suivant !"
+    all_ex[2].style.display = 'block';
+  }
+}
+
+let btn_exo2 = document.getElementById("btn_exo2");
+btn_exo2.addEventListener("click", fun_exo2)
+
+
+function fun_exo3(event){
+  let cle = document.getElementById("exo3");
+  if(cle.value == "857af99f"){
+    let serr = document.querySelectorAll("#page_exo3 div.serrure")[0];
+    serr.innerHTML = "Bravo, vous obtenez 7 points !"
+  }
+}
+
+let btn_exo3 = document.getElementById("btn_exo3");
+btn_exo3.addEventListener("click", fun_exo3)
+
+</script>
+  
+</body>
+</html>
+
+
+

@@ -1,0 +1,205 @@
+
+@import url(https://fonts.googleapis.com/css?family=Maven+Pro:300,400,500,600,700|Fira+Sans:400,400i,500,500i,600,600i,700,700i,800,800i|Source+Code+Pro:500);
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Poor+Story&display=swap');
+
+/**************
+*** GENERAL ***
+***************/
+
+:root {
+  --color-bg: hsl(256,33%,10%);
+  --color-link: #192E5B;
+  --color-dot: hsl(256,33%,70%);
+}
+
+/* $bg-color: hsl(256,33,10);
+$dot-color: hsl(256,33,70);
+
+// Dimensions
+$dot-size: 1px;
+$dot-space: 22px;
+
+body {
+	background:
+		linear-gradient(90deg, $bg-color ($dot-space - $dot-size), transparent 1%) center,
+		linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
+		$dot-color;
+	background-size: $dot-space $dot-space;
+} */
+
+body {
+  font-family: "Fira Sans", sans-serif;
+  font-size: larger;
+  padding: 1em;
+  max-width: 1200px;
+  min-width: 600px;
+  margin: auto;
+  height: 100vh;
+
+  background-color: Cornsilk;
+
+  /*text-align: center;*/
+}
+
+li {
+  padding-top: 0.5em;
+}
+
+h1 {
+  margin-top: 1.5em;
+  margin-bottom: 3em;
+  font-family: Caveat, cursive;
+}
+
+.quote-container {
+  display: table;
+  margin: auto;
+}
+
+a, a:visited {
+  /*font-weight: bold;*/
+  color: var(--color-link);
+}
+
+footer {
+  text-align: right;
+  position: fixed;
+  bottom: 0;
+  padding: 0 50px;
+  width: calc(100% - 100px);
+  max-width: 1400px;
+  height: 50px;
+  /* background-color: rgba(255, 255, 255, 0.911); */
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.cursif {
+  font-family: Poor Story, cursif, serif;
+  font-size: 1.5rem;
+}
+
+a.lrberge, a.lrberge:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a.lrberge:hover, a.lrberge:hover:visited {
+  cursor: pointer;
+  color: var(--color-link);
+  transition: all 0.3s;
+}
+
+q.author {
+  display: block;
+  text-align: right;
+  font-style: italic;
+  padding: 5px;
+  margin-right: -3px;
+}
+
+q.author::before {
+  content: "--";
+}
+
+#quote {
+  display: inline-block;
+  margin: auto;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 9px;
+}
+
+#quote:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 6px black;
+}
+
+.quote-container q {
+  animation: appear 0.5s;
+}
+
+.exercice {
+  animation: appear 0.5s;
+}
+
+.quote-container {
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+}
+
+
+.purpose {
+  font-size: 0.9em;
+  font-family: Source Code Pro, monospace;
+  text-align: left;
+}
+
+.purpose > h2 {
+  cursor: pointer;
+}
+
+#expl-container {
+  display: none;
+}
+
+#expl-container {
+  animation: appear 1s;
+}
+
+
+#qmark {
+  width: 2.2em;
+  height: 2.2em;
+  border: 2px solid #00000099;
+  border-radius: 50%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: -3em;
+
+  color: #00000099;
+}
+
+#qmark:hover {
+  cursor: pointer;
+}
+
+#qmark div {
+  font-size: 1.2em;
+  /* font-weight: bold; */
+  font-family: Source Code Pro;
+}
+
+#qmark:hover > div {
+  animation: jitter .2s;
+}
+
+@keyframes jitter {
+  20% {
+    transform: translateX(50%);
+  }
+  40% {
+    transform: translateX(-50%);
+  }
+  60% {
+    transform: translateX(50%);
+  }
+  80% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
