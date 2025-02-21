@@ -34,7 +34,7 @@
     Dans chaque exercice, vous devez trouver un vecteur de chaine de caractères. 
     Une fois que vous l'avez trouvé, vous devez le hasher avec la fonction suivante :
     <pre><code>
-import hashlib
+from hashlib import sha256
 def gen_key(vec):
   s = ", ".join(vec).encode("utf-8")
   res = sha256(s)
