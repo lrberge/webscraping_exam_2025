@@ -158,7 +158,7 @@ function fun_exo1(event){
   let cle = document.getElementById("exo1");
   if(cle.value == "6e066ae7"){
     let serr = document.querySelectorAll("#page_exo1 div.serrure")[0];
-    serr.innerHTML = "Bravo, vous obtenez 7 points et passez à l'exercice suivant !"
+    serr.innerHTML = "<span id='winning-text'>&#127881; Bravo, </span> vous obtenez 7 points et passez à l'exercice suivant !"
     all_ex[1].style.display = 'block';
   }
 }
