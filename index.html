@@ -24,7 +24,7 @@
   <li>pour accéder à l'exercice suivant, vous devez tester si la clé que vous avez obtenue est la bonne</li>
   <li>si la clé est la bonne : 1) vous obtenez 7 points, et 2) vous accédez à l'exercice qui suit</li>
   <li>vous avez deux heures</li>
-  <li>à la fin, charger votre fichier source python sur la plateforme moodle du 
+  <li>à la fin, chargez votre fichier source python sur la plateforme moodle du 
     cours : <a href="https://moodle.u-bordeaux.fr/mod/assign/view.php?id=563799">Moodle Webscraping</a>. Sans ce fichier, vous aurez 0. </li>
 </ul>
 
@@ -171,7 +171,7 @@ function fun_exo2(event){
   let cle = document.getElementById("exo2");
   if(cle.value == "1fdfdfe3"){
     let serr = document.querySelectorAll("#page_exo2 div.serrure")[0];
-    serr.innerHTML = "Bravo, vous obtenez 7 points et passez à l'exercice suivant !"
+    serr.innerHTML = "<span id='winning-text'>&#127881; Bravo, </span> vous obtenez 7 points et passez à l'exercice suivant !"
     all_ex[2].style.display = 'block';
   }
 }
@@ -184,7 +184,7 @@ function fun_exo3(event){
   let cle = document.getElementById("exo3");
   if(cle.value == "857af99f"){
     let serr = document.querySelectorAll("#page_exo3 div.serrure")[0];
-    serr.innerHTML = "Bravo, vous obtenez 7 points !"
+    serr.innerHTML = "Bravo, vous avez terminé l'examen ! <span id='winning-text'>&#127881; Félicitations ! </span>"
   }
 }
 
